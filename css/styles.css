@@ -58,7 +58,7 @@ header{
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.3) inset;
 }
 
-.get-started-footer{
+.get-started-footer, .redirect-main-page{
     color: var(--red);
     padding: 5px 15px;
     font-size: 14px;
@@ -67,7 +67,7 @@ header{
     transition: box-shadow 250ms;
 }
 
-.get-started-footer:hover {
+.get-started-footer:hover, .redirect-main-page:hover {
     box-shadow: 0 0 50px rgba(235, 6, 44, 0.1) inset;
 }
 
@@ -159,6 +159,15 @@ p{
 .container-header, .container-hero, .container-footer{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper-title-event{
+    flex-basis: 65%;
+}
+
+.wrapper-image-event{
+    flex-basis: 35%;
 }
 
 .container-footer {
@@ -179,10 +188,6 @@ p{
 .container-header{
     align-items: center;
     padding: 8px 0;
-}
-
-.container-hero > div{
-    flex-basis: 420px; /* check this */
 }
 
 .container{
@@ -261,6 +266,11 @@ a{
 
 .date-event-details{
     font-size: 16px;
+}
+
+.image-event{
+    width: 100%;
+    height: auto;
 }
 
 .text-16{
@@ -347,6 +357,10 @@ a{
     padding: 50px 0;
 }
 
+.content-checkout{
+    flex-basis: 60%;
+}
+
 label{
     display: block;
 }
@@ -427,4 +441,26 @@ label{
 
 .display-error{
     display: none;
+}
+
+.ckeckout-event-title{
+    color: var(--orange);
+    margin: 0;
+}
+
+.wrong-request-reserv, .succes-reserv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 151.6px);
+}
+
+.redirect-main-page{
+    margin-top: 2em;
+}
+
+.text-wrong-acces, .text-success-reserv{
+    text-align: center;
+    font-size: 50px;
 }

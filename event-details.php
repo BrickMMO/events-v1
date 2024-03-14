@@ -19,9 +19,9 @@ include("includes/header.php");
 
 <main class="hero">
     <div class="content-wrapper container-hero">
-        <div>
+        <div class="wrapper-title-event">
             <h1><?php echo $record["event_name"]; ?></h1>
-            <p class="hero-main-text"><?php echo $record["location"]; ?></p>
+            <p class="hero-main-text"><span class='fa-solid fa-location-dot'></span> <?php echo $record["location"]; ?></p>
 
             <?php 
                     $start_date = $record["start_date"];
@@ -32,10 +32,12 @@ include("includes/header.php");
 
                     $start_newDate = $start_dateCast->format("D, M j g:i A");
                     $end_newDate = $end_dateCast->format("g:i A");
-                    echo "<p class='date-event-details'>".$start_newDate." - ".$end_newDate."</p>"
+                    echo "<p class='date-event-details'><span class='fa-solid fa-calendar-days'></span>  ".$start_newDate." - ".$end_newDate."</p>"
                 ?>
         </div>
-        <img src="images/events.png" alt="events image">
+        <div class="wrapper-image-event">
+            <img src="data:image/jpeg;base64,<?php echo base64_encode($record["photo"]); ?>" class="event-name-title2 image-event" alt="events image">
+        </div>
     </div>
 </main>
 
@@ -51,10 +53,10 @@ include("includes/header.php");
         echo "<p class='style-organizer'>By <span class='text-bold'>".$record["organizer"]."</span></p>";
 
         echo "<h2 class='subtile-date'>Date and time</h2>";
-        echo "<p class='date-event-details'>".$start_newDate." - ".$end_newDate."</p>";
+        echo "<p class='date-event-details'><span class='fa-solid fa-calendar-days'></span>  ".$start_newDate." - ".$end_newDate."</p>";
 
         echo "<h2 class='subtitle-text'>Location</h2>";
-        echo "<p class='text-16'>".$record["location"]."</p>";
+        echo "<p class='text-16'><span class='fa-solid fa-location-dot'></span> ".$record["location"]."</p>";
 
         echo "<h2 class='subtitle-text'>About this event</h2>";
         $realDescription = str_replace("\n", "<br>", $record["detail_description"]);
@@ -66,7 +68,10 @@ include("includes/header.php");
 
     if(((int)$record["max_capacity"]-(int)$record["tickets_bought"]) >= 1){
         echo "<div class='reserve'> 
-                    <a href='checkout.php?event_id=".$record["event_id"]."' class='reserve-link'>Reserve a spot</a>
+                    <form action='checkout.php' method='POST'>
+                        <input type='hidden' name='event_id' value=".$record["event_id"].">
+                        <button type='submit' name='reservation' class='reserve-link'>Reserve a spot</button>
+                    </form>
                     <p class='info-ticket content-wrapper'><span class='style-infi-ticket'>**</span>This is valid just for one ticket. If you want more tickets, you must request a new ticket with another email.</p>
               </div>";
     } else{

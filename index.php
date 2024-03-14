@@ -21,20 +21,22 @@ include("includes/header.php");
 <section class="section-events">
 
     <div class="content-form">
-        <form action="https://www.google.com/" class="filter-form">
-            <input type="text" class="search" placeholder="Search by events">
-            <button type="submit" class="filter-button"><span class="fa-solid fa-magnifying-glass"></span></button>
+        <form method="GET" action="" class="filter-form">
+            <input type="text" class="search" name="search_key" placeholder="Search by events">
+            <button type="submit" class="filter-button" name="search"><span class="fa-solid fa-magnifying-glass"></span></button>
         </form>
     </div>
 
     <h2 class="events-start">Check out our current events:</h2>
 
     <?php
+        if(isset($_GET['search'])){
+            $query = 'SELECT * FROM events WHERE event_name LIKE "%'.$_GET['search_key'].'%"';
+        } else {
+            $query = 'SELECT * FROM events';
+        }
 
-    $query = 'SELECT * FROM events';
-
-    $result = mysqli_query($connect, $query);
-
+        $result = mysqli_query($connect, $query);
     ?>
 
     <div class="container content-wrapper">
@@ -56,10 +58,10 @@ include("includes/header.php");
 
                     $start_newDate = $start_dateCast->format("D, M j g:i A");
                     $end_newDate = $end_dateCast->format("g:i A");
-                    echo "<p class='date-content'>".$start_newDate." - ".$end_newDate."</p>"
+                    echo "<p class='date-content'><span class='fa-solid fa-calendar-days'></span> ".$start_newDate." - ".$end_newDate."</p>"
                 ?>
 
-                <p class="location-content"><?php echo $record["location"]; ?></p>
+                <p class="location-content"><span class="fa-solid fa-location-dot"></span> <?php echo $record["location"]; ?></p>
 
                 <a href="event-details.php?event_id=<?php echo $record["event_id"]; ?>" class="event-link">Event Details</a>
                 

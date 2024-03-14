@@ -7,18 +7,28 @@
     if(isset($_POST["form_fname"])){
 
         $query = 'INSERT INTO participants (first_name, last_name, email, event_id)
-        VALUES ("'.$_POST["form_fname"].'", "'.$_POST["form_lname"].'", "'.$_POST["form_email"].'", '.(int)$_GET["event_id"].')';
+        VALUES ("'.$_POST["form_fname"].'", "'.$_POST["form_lname"].'", "'.$_POST["form_email"].'", '.(int)$_POST["event_id"].')';
 
         mysqli_query($connect, $query);
 
         if(stripos(mysqli_error($connect), 'Duplicate') !== false){
             echo "<p class='error-checkout'><span class='error-checkout2'>***</span> Sorry, this email is already attending this event; if you want a new ticket you must provide another valid email <span class='error-checkout2'>***</span></p>";
         } else{
-            header("Location: index.php");
+            header("Location: success-reservation.php");
             die();
         }
     
+    } else{
+
+        if(!isset($_POST['reservation'])){ 
+            header("Location: wrong-acces.php");
+            die();
+        } 
     }
+
+    $query = 'SELECT * FROM events WHERE event_id = '.$_POST["event_id"].' LIMIT 1';
+    $result = mysqli_query($connect, $query);
+    $record = mysqli_fetch_assoc($result);
 
     include("includes/header.php");
 
@@ -29,6 +39,7 @@
     <section class="content-checkout">
         <h1>Checkout</h1>
         <h2>Order summary</h2>
+        <?php echo '<h3 class="ckeckout-event-title">Event: '.$record["event_name"].' </h3>'; ?>
 
         <div class="bill">
             <div>
@@ -51,6 +62,7 @@
         <form method="post" name="form_checkout">
             
             <div class="text-input">
+                <input type='hidden' name='event_id' value=<?php echo $record["event_id"] ?>>
                 <div>
                     <label for="firstName">First name <span class="checkout-label">*</span>:</label>
                     <input type="text" id="firstName" name="form_fname" class="text-data space-input">

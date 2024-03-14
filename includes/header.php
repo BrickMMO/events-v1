@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events Project</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
-    <script src="https://kit.fontawesome.com/_______.js" crossorigin="anonymous"></script> <!-- provide your font awesome key here -->
+    <script src="https://kit.fontawesome.com/*******.js" crossorigin="anonymous"></script> <!-- provide your font awesome key here -->
 </head>
 <body>
     
