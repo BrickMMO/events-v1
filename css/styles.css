@@ -5,6 +5,7 @@
     --gray: #8A8A8A;
     --light-blue: #F7F9FC;
     --red: rgb(235, 6, 44);
+    --green: rgb(64, 145, 108);
 }
 
 body {
@@ -448,7 +449,7 @@ label{
     margin: 0;
 }
 
-.wrong-request-reserv, .succes-reserv{
+.wrong-request-reserv, .succes-reserv, .delete-confirm{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -460,7 +461,152 @@ label{
     margin-top: 2em;
 }
 
-.text-wrong-acces, .text-success-reserv{
+.text-wrong-acces, .text-success-reserv, .text-title-delet-confirm{
     text-align: center;
     font-size: 50px;
+}
+
+/* admin-list */
+
+.admin-subtitle{
+    color: var(--gray);
+    margin: 0;
+}
+
+.event-content-admin{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.item-container-admin{
+    flex-basis: 294px;
+    box-shadow: 0 2px 4px gray;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.update-event{
+    color: var(--green);
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 2px solid rgba(27, 67, 50, 0.5);
+    transition: box-shadow 250ms;
+    font-weight: bold;
+}
+
+.update-event:hover{
+    box-shadow: 0 0 50px rgba(64, 145, 108, 0.3) inset;
+}
+
+.input-admin{
+    width: 30%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin-left: 0.5em;
+}
+
+.input-number-admin{
+    width: 10%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin-left: 0.5em;
+}
+
+.label-admin{
+    display: inline;
+}
+
+.formfield {
+    display: flex;
+    align-items: flex-start;
+}
+
+.textarea-admin{
+    width: 60%;
+    height: 8em;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin-left: 0.5em;
+}
+
+.p-admin{
+    font-size: 16px;
+    color: var(--orange);
+    font-weight: bold;
+}
+
+.margin-input{
+    margin-bottom: 1em;
+}
+
+.update-event-admin{
+    color: white;
+    background-color: rgb(64, 145, 108);
+    padding: 5px 15px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid rgb(64, 145, 108);
+    transition: all 250ms;
+    height: 35.6px;
+}
+
+.update-event-admin:hover{
+    background-color: rgba(0, 255, 0, 0.2);
+    color: black;
+}
+
+.delete-event-admin{
+    color: white;
+    background-color: var(--red);
+    padding: 5px 15px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid var(--red);
+    transition: all 250ms;
+}
+
+.delete-event-admin:hover{
+    background-color: rgba(235, 6, 44, 0.2);
+    color: black;
+}
+
+.update-delete-action, .delete-conform-action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.event-title-delete{
+    color: var(--orange);
+}
+
+.delete-confirm-admin{
+    color: white;
+    background-color: var(--red);
+    padding: 5px 15px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid var(--red);
+    transition: all 250ms;
+    height: 35.6px;
+}
+
+.delete-confirm-admin:hover{
+    background-color: rgba(235, 6, 44, 0.2);
+    color: black;
+}
+
+.cancel-confirm-admin{
+    
+    align-self: flex-start;
+}
+
+.content-delete-confirm{
+    max-width:1100px; 
+    margin:0 auto; 
 }
