@@ -55,7 +55,7 @@ include("includes/header.php");
                     ?>
                 </div>
 
-                <a href="admin-update.php?event_id=<?php echo $record["event_id"]; ?>" class="update-event">Update Event</a>
+                <a href="admin-edit.php?event_id=<?php echo $record["event_id"]; ?>" class="edit-event">Update Event</a>
                 
             </div>
 

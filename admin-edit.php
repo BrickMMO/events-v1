@@ -27,15 +27,15 @@ include("includes/header.php");
             </div>
             <div class="margin-input">
                 <label for="label_start_date" class="label-admin">Start Date:</label>
-                <input type="text" id="label_start_date" name="start_date" class="input-admin" value="<?php echo $record["start_date"]; ?>">
+                <input type="datetime-local" id="label_start_date" name="start_date" class="input-admin" value="<?php echo $record["start_date"]; ?>">
             </div>
             <div class="margin-input">
                 <label for="label_end_date" class="label-admin">End Date:</label>
-                <input type="text" id="label_end_date" name="end_date" class="input-admin" value="<?php echo $record["end_date"]; ?>">
+                <input type="datetime-local" id="label_end_date" name="end_date" class="input-admin" value="<?php echo $record["end_date"]; ?>">
             </div>
             <div class="formfield margin-input">
                 <label for="label_description" class="label-admin">Description:</label>
-                <textarea id="label_description" name="description" class="top-left-label textarea-admin"><?php echo htmlspecialchars($record["description"]); ?></textarea>
+                <textarea id="label_description" name="description" class="textarea-admin"><?php echo htmlspecialchars($record["description"]); ?></textarea>
             </div>
             <div class="margin-input">
                 <label for="label_organizer" class="label-admin">Organizer:</label>
@@ -47,7 +47,7 @@ include("includes/header.php");
             </div>
             <div class="formfield margin-input">
                 <label for="label_details_description" class="label-admin">Details Description:</label>
-                <textarea id="label_details_description" name="detail_description" class="top-left-label textarea-admin"><?php echo htmlspecialchars($record["detail_description"]); ?></textarea>
+                <textarea id="label_details_description" name="detail_description" class="textarea-admin"><?php echo htmlspecialchars($record["detail_description"]); ?></textarea>
             </div>
             <div class="margin-input">
                 <label for="label_capacity" class="label-admin">Max Capacity:</label>
@@ -56,8 +56,8 @@ include("includes/header.php");
 
             <p class="p-admin margin-input">Total Tickets Bought: <?php echo $record["tickets_bought"]; ?></p>
 
-            <div class="update-delete-action">
-                <button type="submit" class="update-event-admin">Update</button>
+            <div class="edit-delete-action">
+                <button type="submit" class="edit-event-admin">Update</button>
                 <a href="delete-confirm.php?event_id=<?php echo $record["event_id"]; ?>" class="delete-event-admin">Delete</a>
             </div>
         </form>
