@@ -20,9 +20,10 @@ include("includes/header.php");
 <div class="delete-confirm content-delete-confirm">
     <a href="admin-list.php" class="cancel-confirm-admin">Cancel</a>
     <h1 class="text-title-delet-confirm">Are you sure you want to delete the Event: <br> <span class="event-title-delete"><?php echo $record["event_name"]; ?></span></h1>
-    <div class="delete-conform-action">
-        <button type="submit" class="delete-confirm-admin">Delete</button>
-    </div>
+    <form action="admin-delete.php" method="post">
+        <input type="hidden" name="event_id" value="<?php echo $record["event_id"]; ?>">
+        <button type="submit" name="delete" class="delete-confirm-admin">Delete <span class="fa-solid fa-trash"></span></button>
+    </form>
 </div>
 
 <?php 

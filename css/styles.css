@@ -59,7 +59,7 @@ header{
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.3) inset;
 }
 
-.get-started-footer, .redirect-main-page{
+.get-started-footer, .redirect-main-page, .cancel-confirm-admin{
     color: var(--red);
     padding: 5px 15px;
     font-size: 14px;
@@ -68,7 +68,7 @@ header{
     transition: box-shadow 250ms;
 }
 
-.get-started-footer:hover, .redirect-main-page:hover {
+.get-started-footer:hover, .redirect-main-page:hover, .cancel-confirm-admin:hover {
     box-shadow: 0 0 50px rgba(235, 6, 44, 0.1) inset;
 }
 
@@ -602,8 +602,7 @@ label{
     color: black;
 }
 
-.cancel-confirm-admin{
-    
+.cancel-confirm-admin{ 
     align-self: flex-start;
 }
 
