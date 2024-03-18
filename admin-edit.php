@@ -19,7 +19,7 @@ include("includes/header.php");
 
 <main class="hero">
     <div class="content-wrapper">
-        <form action="" method="post">
+        <form action="admin-update.php" method="post">
             <input type="hidden" name="event_id" value="<?php echo $record["event_id"]; ?>">
             <div class="margin-input">
                 <label for="label_event_name" class="label-admin">Event Name:</label>
@@ -56,8 +56,11 @@ include("includes/header.php");
 
             <p class="p-admin margin-input">Total Tickets Bought: <?php echo $record["tickets_bought"]; ?></p>
 
+            <input type="hidden" name="tickets_bought" value="<?php echo $record["tickets_bought"]; ?>">
+            <input type="hidden" name="price" value="<?php echo $record["price"]; ?>">
+
             <div class="edit-delete-action">
-                <button type="submit" class="edit-event-admin">Update</button>
+                <button type="submit" name="update" class="edit-event-admin">Update</button>
                 <a href="delete-confirm.php?event_id=<?php echo $record["event_id"]; ?>" class="delete-event-admin">Delete</a>
             </div>
         </form>
