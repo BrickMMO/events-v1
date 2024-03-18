@@ -21,6 +21,8 @@ include("includes/header.php");
             <input type="text" class="search" name="search_key" placeholder="Search by events">
             <button type="submit" class="filter-button" name="search"><span class="fa-solid fa-magnifying-glass"></span></button>
         </form>
+
+        <a href="admin-new.php" class="add-event"><span class="fa-solid fa-plus"></span> Add Event</a>
     </div>
 
     <?php

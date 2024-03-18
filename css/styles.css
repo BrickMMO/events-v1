@@ -119,6 +119,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0 1em;
 }
 
 .filter-form{
@@ -543,7 +544,7 @@ label{
     margin-bottom: 1em;
 }
 
-.edit-event-admin{
+.edit-event-admin, .new-event-admin{
     color: white;
     background-color: rgb(64, 145, 108);
     padding: 5px 15px;
@@ -554,7 +555,7 @@ label{
     height: 35.6px;
 }
 
-.edit-event-admin:hover{
+.edit-event-admin:hover, .new-event-admin:hover{
     background-color: rgba(0, 255, 0, 0.2);
     color: black;
 }
@@ -574,7 +575,7 @@ label{
     color: black;
 }
 
-.edit-delete-action, .delete-conform-action{
+.edit-delete-action, .delete-conform-action, .new-action{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -609,4 +610,20 @@ label{
 .content-delete-confirm{
     max-width:1100px; 
     margin:0 auto; 
+}
+
+.add-event{
+    color: white;
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 20px;
+    border: 2px solid rgb(27, 67, 50);
+    background-color: rgb(27, 67, 50);
+    transition: all 250ms;
+    font-weight: bold;
+}
+
+.add-event:hover{
+    background-color: rgb(82, 183, 136);
+    color: black;
 }

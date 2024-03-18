@@ -42,8 +42,8 @@ include("includes/header.php");
                 <label for="label_capacity" class="label-admin">Max Capacity:</label>
                 <input type="number" id="label_capacity" name="max_capacity" min="0" class="input-number-admin">
             </div>
-            <div class="edit-delete-action">
-                <button type="submit" class="edit-event-admin">Create new Event</button>
+            <div class="new-action">
+                <button type="submit" name="create" class="new-event-admin">Create new Event</button>
             </div>
         </form>
     </div>
