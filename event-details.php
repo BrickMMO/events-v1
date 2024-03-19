@@ -36,7 +36,7 @@ include("includes/header.php");
                 ?>
         </div>
         <div class="wrapper-image-event">
-            <img src="data:image/jpeg;base64,<?php echo base64_encode($record["photo"]); ?>" class="event-name-title2 image-event" alt="events image">
+            <img src="<?php echo $record["photo"]; ?>" class="event-name-title2 image-event" alt="events image">
         </div>
     </div>
 </main>

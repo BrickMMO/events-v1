@@ -43,8 +43,7 @@ include("includes/header.php");
         <?php while($record = mysqli_fetch_assoc($result)): ?>
 
         <div class="item-container">
-            <!-- <img src="images/lego.jpg" alt="lego image"> -->
-            <img src="data:image/jpeg;base64,<?php echo base64_encode($record["photo"]); ?>" width="294" height="152" alt="Event Photo">
+            <img src="<?php echo $record["photo"]; ?>" width="294" height="152" alt="Event Photo">
 
             <div class="event-content">
                 <h2 class="title-event"><?php echo $record["event_name"]; ?></h2>
