@@ -9,7 +9,7 @@ include("includes/header.php");
 
 <main class="hero">
     <div class="content-wrapper">
-        <form action="admin-create.php" method="post">
+        <form action="admin-create.php" method="post" enctype="multipart/form-data">
             <div class="margin-input">
                 <label for="label_event_name" class="label-admin">Event Name:</label>
                 <input type="text" id="label_event_name" name="event_name" class="input-admin">
@@ -41,6 +41,10 @@ include("includes/header.php");
             <div class="margin-input">
                 <label for="label_capacity" class="label-admin">Max Capacity:</label>
                 <input type="number" id="label_capacity" name="max_capacity" min="0" class="input-number-admin">
+            </div>
+            <div class="margin-input">
+                <label for="label_photo" class="label-admin">Photo:</label>
+                <input type="file" id="label_photo" name="photo">
             </div>
             <div class="new-action">
                 <button type="submit" name="create" class="new-event-admin">Create new Event</button>
