@@ -59,7 +59,7 @@ header{
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.3) inset;
 }
 
-.get-started-footer, .redirect-main-page, .cancel-confirm-admin{
+.get-started-footer, .redirect-main-page, .cancel-confirm-admin, .logout{
     color: var(--red);
     padding: 5px 15px;
     font-size: 14px;
@@ -68,7 +68,7 @@ header{
     transition: box-shadow 250ms;
 }
 
-.get-started-footer:hover, .redirect-main-page:hover, .cancel-confirm-admin:hover {
+.get-started-footer:hover, .redirect-main-page:hover, .cancel-confirm-admin:hover, .logout:hover {
     box-shadow: 0 0 50px rgba(235, 6, 44, 0.1) inset;
 }
 

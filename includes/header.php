@@ -23,6 +23,11 @@
                     <li><a href="https://brickmmo.com/research">Research</a></li>
                     <li><a href="https://brickmmo.com/commissions">Commissions</a></li>
                     <li><a href="https://brickmmo.com/get-started" class="get-started">Get Started</a></li>
+                    <?php
+                        if(isset($_SESSION['id'])){
+                            echo '<li><a href="admin-logout.php" class="logout">Logout <span class="fa-solid fa-right-from-bracket"></span></a></li>';
+                        }
+                    ?>
                 </ul>
             </nav>
         </div>

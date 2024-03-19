@@ -3,6 +3,22 @@
 include("includes/config.php");
 include("includes/database.php");
 include("includes/functions.php");
+
+if(isset($_POST['login'])){
+    $query = 'SELECT * FROM admins WHERE email = "'.$_POST['email'].'" AND password = "'.md5($_POST['password']).'" LIMIT 1';
+    
+    $result = mysqli_query($connect, $query);
+
+    if(mysqli_num_rows($result)){
+        $record = mysqli_fetch_assoc($result);
+        $_SESSION['id'] = $record['id'];
+        $_SESSION['email'] = $record['email'];
+
+        header('Location: admin-list.php');
+        die();
+    }
+}
+
 include("includes/header.php");
 
 ?>
@@ -19,14 +35,12 @@ include("includes/header.php");
 
         <h1 style="font-size: 32px">Flow Login</h1>
 
-        <p style="margin:1em 0">Welcome to the BrickMMO project management application.</p>
-        <p style="margin:1em 0">Login using your Humber email address:</p>
+        <p style="margin:0.75em 0">Welcome to the BrickMMO project management application.</p>
+        <p style="margin:0.75em 0">Login using your Humber email address:</p>
 
         <hr>
 
         <form method="post">
-
-            <input type="hidden" name="submit" value="true">
 
             <div class="margin-input">
                 <label for="label_email" class="label-admin">Email:</label>
@@ -38,7 +52,7 @@ include("includes/header.php");
                 <input type="password" id="label_password" name="password" class="input-admin">
             </div>
 
-            <input type="submit" value="Login">
+            <button type="submit" name="login" class="new-event-admin">Login</button>
 
         </form>
     </div>
