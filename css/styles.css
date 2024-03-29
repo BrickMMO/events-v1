@@ -139,7 +139,7 @@ p{
 
 .search{
     width: calc(100% - 80px);
-    color: var(--gray);
+    color: black;
     padding: 12px 40px 12px 40px;
     border: 1px solid var(--gray);
     border-radius: 20px;
@@ -148,7 +148,7 @@ p{
 }
 
 .search::placeholder {
-    color: var(--gray); /* whch color?? */
+    color: var(--gray); 
 }
 
 .events-start{

@@ -22,15 +22,22 @@ include("includes/header.php");
 
     <div class="content-form">
         <form method="GET" action="" class="filter-form">
-            <input type="text" class="search" name="search_key" placeholder="Search by events">
-            <button type="submit" class="filter-button" name="search"><span class="fa-solid fa-magnifying-glass"></span></button>
+            <input type="text" class="search" name="search_key" placeholder="Search by events"
+            <?php
+                if(isset($_GET['search_key'])){
+                    $search_filter = htmlspecialchars($_GET['search_key']);
+                    echo "value='".$search_filter."'";
+                }
+            ?>
+            >
+            <button type="submit" class="filter-button"><span class="fa-solid fa-magnifying-glass"></span></button>
         </form>
     </div>
 
     <h2 class="events-start">Check out our current events:</h2>
 
     <?php
-        if(isset($_GET['search'])){
+        if(isset($_GET['search_key'])){
             $query = 'SELECT * FROM events WHERE event_name LIKE "%'.$_GET['search_key'].'%"';
         } else {
             $query = 'SELECT * FROM events';

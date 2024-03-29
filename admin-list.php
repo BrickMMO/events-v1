@@ -21,15 +21,22 @@ include("includes/header.php");
 
     <div class="content-form">
         <form method="GET" action="" class="filter-form">
-            <input type="text" class="search" name="search_key" placeholder="Search by events">
-            <button type="submit" class="filter-button" name="search"><span class="fa-solid fa-magnifying-glass"></span></button>
+            <input type="text" class="search" name="search_key" placeholder="Search by events"
+            <?php
+                if(isset($_GET['search_key'])){
+                    $search_filter = htmlspecialchars($_GET['search_key']);
+                    echo "value='".$search_filter."'";
+                }
+            ?>
+            >
+            <button type="submit" class="filter-button"><span class="fa-solid fa-magnifying-glass"></span></button>
         </form>
 
         <a href="admin-new.php" class="add-event"><span class="fa-solid fa-plus"></span> Add Event</a>
     </div>
 
     <?php
-        if(isset($_GET['search'])){
+        if(isset($_GET['search_key'])){
             $query = 'SELECT * FROM events WHERE event_name LIKE "%'.$_GET['search_key'].'%"';
         } else {
             $query = 'SELECT * FROM events';
