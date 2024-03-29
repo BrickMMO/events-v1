@@ -67,7 +67,10 @@ include("includes/header.php");
                     ?>
                 </div>
 
-                <a href="admin-edit.php?event_id=<?php echo $record["event_id"]; ?>" class="edit-event">Update Event</a>
+                <div>
+                    <a href="admin-edit.php?event_id=<?php echo $record["event_id"]; ?>" class="edit-event display-block mb-10">Update Event</a>
+                    <a href="admin-list-participants.php?event_id=<?php echo $record["event_id"]; ?>" class="list-participants display-block">List Participants</a>
+                </div>
                 
             </div>
 

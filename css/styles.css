@@ -59,7 +59,7 @@ header{
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.3) inset;
 }
 
-.get-started-footer, .redirect-main-page, .cancel-confirm-admin, .logout{
+.get-started-footer, .redirect-main-page, .cancel-confirm-admin, .logout, .delete-participant{
     color: var(--red);
     padding: 5px 15px;
     font-size: 14px;
@@ -68,7 +68,7 @@ header{
     transition: box-shadow 250ms;
 }
 
-.get-started-footer:hover, .redirect-main-page:hover, .cancel-confirm-admin:hover, .logout:hover {
+.get-started-footer:hover, .redirect-main-page:hover, .cancel-confirm-admin:hover, .logout:hover , .delete-participant:hover{
     box-shadow: 0 0 50px rgba(235, 6, 44, 0.1) inset;
 }
 
@@ -111,7 +111,7 @@ p{
     color: var(--gray);
 }
 
-.section-events{
+.section-events, .section-list-participants{
     margin: 32px 0 79px 0;
 }
 
@@ -625,4 +625,40 @@ label{
 .add-event:hover{
     background-color: rgb(82, 183, 136);
     color: black;
+}
+
+.display-block{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.mb-10{
+    margin-bottom: 10px;
+}
+
+.list-participants{
+    color: rgba(2, 48, 71);
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 2px solid rgba(2, 48, 71);
+    transition: box-shadow 250ms;
+    font-weight: bold;
+}
+
+.list-participants:hover{
+    box-shadow: 0 0 50px rgba(2, 48, 71, 0.5) inset;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.size-16{
+    font-size: 16px;
+}
+
+.no-participants{
+    text-align: center;
 }
