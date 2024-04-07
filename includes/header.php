@@ -13,7 +13,6 @@
         <div class="content-wrapper container-header">
             <div class="container-header-burger">
                 <img src="./images/burger.png" alt="" class="header-left" id="burger">
-                <!-- <button class="burger-menu"><img src="./images/burger.png" alt="" class="header-left"></button> -->
                 <a href="https://github.com/BrickMMO" ><img src="./images/github.png" alt="" class="header-left"></a>
             </div>
             <nav>

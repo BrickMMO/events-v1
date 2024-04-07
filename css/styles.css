@@ -637,6 +637,11 @@ label{
     margin-bottom: 10px;
 }
 
+.count-participants{
+    display: flex;
+    column-gap: 2em;
+}
+
 .list-participants{
     color: rgba(2, 48, 71);
     padding: 5px 15px;

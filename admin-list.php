@@ -54,17 +54,20 @@ include("includes/header.php");
                     <h2 class="title-event"><?php echo 'Event Id: '.$record["event_id"].''; ?></h2>
                     <h2 class="title-event"><?php echo $record["event_name"]; ?></h2>
 
-                    <?php 
-                        $start_date = $record["start_date"];
-                        $end_date = $record["end_date"];
+                    <div class="count-participants">
+                        <?php 
+                            $start_date = $record["start_date"];
+                            $end_date = $record["end_date"];
 
-                        $start_dateCast = new DateTime($start_date);
-                        $end_dateCast = new DateTime($end_date);
+                            $start_dateCast = new DateTime($start_date);
+                            $end_dateCast = new DateTime($end_date);
 
-                        $start_newDate = $start_dateCast->format("D, M j g:i A");
-                        $end_newDate = $end_dateCast->format("g:i A");
-                        echo "<p class='date-content'><span class='fa-solid fa-calendar-days'></span> ".$start_newDate." - ".$end_newDate."</p>"
-                    ?>
+                            $start_newDate = $start_dateCast->format("D, M j g:i A");
+                            $end_newDate = $end_dateCast->format("g:i A");
+                            echo "<p><span class='fa-solid fa-calendar-days'></span> ".$start_newDate." - ".$end_newDate."</p>"
+                        ?>
+                        <p><span class="fa-solid fa-user"></span> <?php echo $record["tickets_bought"]."/".$record["max_capacity"] ?></p>
+                    </div>
                 </div>
 
                 <div>

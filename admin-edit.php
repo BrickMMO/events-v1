@@ -66,7 +66,7 @@ include("includes/header.php");
 
             <div class="edit-delete-action">
                 <button type="submit" name="update" class="edit-event-admin">Update</button>
-                <a href="delete-confirm.php?event_id=<?php echo $record["event_id"]; ?>" class="delete-event-admin">Delete</a>
+                <a href="admin-delete-confirm.php?event_id=<?php echo $record["event_id"]; ?>" class="delete-event-admin">Delete</a>
             </div>
         </form>
     </div>
