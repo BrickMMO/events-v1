@@ -21,15 +21,14 @@
                     <li><a href="https://brickmmo.com/education">Education</a></li>
                     <li><a href="https://brickmmo.com/research">Research</a></li>
                     <li><a href="https://brickmmo.com/commissions">Commissions</a></li>
-                    <li><a href="https://brickmmo.com/get-started" class="get-started">Get Started</a></li>
+                    </ul>
+            </nav>
+                    <button class="get-started"><a href="https://brickmmo.com/get-started">Get Started</a></button>
                     <?php
                         if(isset($_SESSION['id'])){
                             echo '<li><a href="admin-logout.php" class="logout">Logout <span class="fa-solid fa-right-from-bracket"></span></a></li>';
                         }
                     ?>
-                </ul>
-            </nav>
+                
         </div>
     </header>
-
-    <div>
