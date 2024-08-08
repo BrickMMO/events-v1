@@ -11,7 +11,8 @@
         organizer = '" .mysqli_real_escape_string($connect, $_POST['organizer']). "',
         location = '" .mysqli_real_escape_string($connect, $_POST['location']). "',
         detail_description = '" .mysqli_real_escape_string($connect, $_POST['detail_description']). "',
-        max_capacity = '" .mysqli_real_escape_string($connect, $_POST['max_capacity']). "'
+        max_capacity = '" .mysqli_real_escape_string($connect, $_POST['max_capacity']). "',
+        updated_at = NOW()
         WHERE id = '".$_POST['event_id']."'";
 
         $updateEvent = mysqli_query($connect, $query);

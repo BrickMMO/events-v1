@@ -6,7 +6,7 @@ include("includes/functions.php");
 
     if(isset($_POST['create'])){  
         
-        $query = "INSERT INTO events (event_name, start_date, end_date, description, organizer, location, detail_description, max_capacity, tickets_bought, price,created_at, updated_at) 
+        $query = "INSERT INTO events (event_name, start_date, end_date, description, organizer, location, detail_description, max_capacity, tickets_bought, price, created_at, updated_at) 
             VALUES (
                 '" .mysqli_real_escape_string($connect, $_POST['event_name']). "',
                 '" .mysqli_real_escape_string($connect, $_POST['start_date']). "',
@@ -27,7 +27,7 @@ include("includes/functions.php");
             $photo = 'data:image/jpeg;base64, '.base64_encode(file_get_contents($_FILES['photo']['tmp_name']));
         
             $query = 'UPDATE events SET
-                photo = "'.addslashes($photo).'"
+                photo = "'.addslashes($photo).', "
                 WHERE id = '.$insert_id.'
                 LIMIT 1';
             mysqli_query($connect, $query);  
