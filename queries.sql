@@ -9,8 +9,7 @@ CREATE TABLE events (
     location VARCHAR(255),
     detail_description TEXT,
     max_capacity INT(10) UNSIGNED,
-    tickets_bought INT(10) UNSIGNED,
-    price DECIMAL(10, 2) UNSIGNED);
+    tickets_bought INT(10) UNSIGNED);
 
 CREATE TABLE participants (
     id INT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 

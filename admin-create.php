@@ -6,7 +6,7 @@ include("includes/functions.php");
 
     if(isset($_POST['create'])){  
         
-        $query = "INSERT INTO events (event_name, start_date, end_date, description, organizer, location, detail_description, max_capacity, tickets_bought, price, created_at, updated_at) 
+        $query = "INSERT INTO events (event_name, start_date, end_date, description, organizer, location, detail_description, max_capacity, tickets_bought, created_at, updated_at) 
             VALUES (
                 '" .mysqli_real_escape_string($connect, $_POST['event_name']). "',
                 '" .mysqli_real_escape_string($connect, $_POST['start_date']). "',
@@ -16,7 +16,7 @@ include("includes/functions.php");
                 '" .mysqli_real_escape_string($connect, $_POST['location']). "',
                 '" .mysqli_real_escape_string($connect, $_POST['detail_description']). "',
                 '" .mysqli_real_escape_string($connect, $_POST['max_capacity']). "',
-                0, 0.00, NOW(), NOW())";
+                0, NOW(), NOW())";
 
         $newEvent = mysqli_query($connect, $query);
 

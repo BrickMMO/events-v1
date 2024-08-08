@@ -71,17 +71,6 @@ include("includes/header.php");
 
                 <a href="event-details.php?event_id=<?php echo $record["id"]; ?>" class="event-link">Event Details</a>
                 
-                <!-- <?php 
-                    $price = $record["price"]; 
-
-                    if((float)$price === 0.0){
-                        echo "<p>Free</p>";
-                    } else{
-                        echo "<p>".$price."<p>";
-                    }
-                ?>
-                
-                <?php echo "<p>Tickets available : ".((int)$record["max_capacity"]-(int)$record["tickets_bought"])."</p>"; ?> -->
             </div>
 
         </div>
