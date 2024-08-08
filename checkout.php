@@ -2,7 +2,6 @@
 
     include("includes/config.php");
     include("includes/database.php");
-    include("includes/functions.php");
 
     if(isset($_POST["form_fname"])){
 
@@ -38,24 +37,6 @@
 
     <section class="content-checkout">
         <h1>Checkout</h1>
-        <h2>Order summary</h2>
-        <?php echo '<h3 class="ckeckout-event-title">Event: '.$record["event_name"].' </h3>'; ?>
-
-        <div class="bill">
-            <div>
-                <p>1 x General Admission</p>
-                <p>Taxes</p>
-            </div>
-            <div>
-                <p>$ 0.00</p>
-                <p>$ 0.00</p>
-            </div>
-        </div>
-        <div class="bill-total">
-            <p class="text-bold">Total</p>
-            <p>$ 0.00</p>
-        </div>
-
         <h2 class="subtitle-checkout">Contact information</h2>
         <p class="subtitle-checkout"><span class="checkout-label">* </span>Indicates a required field</p>
 

@@ -2,7 +2,6 @@
 
 include("includes/config.php");
 include("includes/database.php");
-include("includes/functions.php");
 include("includes/header.php");
 
 ?>
@@ -78,7 +77,6 @@ include("includes/header.php");
         <?php endwhile; ?>
     </div>
 
-    <button class="more-event-link">More events</button>
 </section>
 
 <?php 
