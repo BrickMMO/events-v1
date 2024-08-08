@@ -33,7 +33,7 @@ include("includes/header.php");
         
                         <form  action="admin-delete-participant.php" method="post">
                             <input type="hidden" name="event_id" value="<?php echo $record["event_id"]; ?>">
-                            <input type="hidden" name="participant_id" value="<?php echo $record["participant_id"]; ?>">
+                            <input type="hidden" name="participant_id" value="<?php echo $record["id"]; ?>">
                             <button type="submit" name="delete-participant" class="delete-participant">Delete</button>
                         </form>
                         

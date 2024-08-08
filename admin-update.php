@@ -12,7 +12,7 @@
         location = '" .mysqli_real_escape_string($connect, $_POST['location']). "',
         detail_description = '" .mysqli_real_escape_string($connect, $_POST['detail_description']). "',
         max_capacity = '" .mysqli_real_escape_string($connect, $_POST['max_capacity']). "'
-        WHERE event_id = '".$_POST['event_id']."'";
+        WHERE id = '".$_POST['event_id']."'";
 
         $updateEvent = mysqli_query($connect, $query);
 
@@ -28,7 +28,7 @@
 
             $photo = 'data:image/'.$type.';base64,'.base64_encode(file_get_contents($_FILES['photo']['tmp_name']));
 
-            $queryPhoto = "UPDATE events SET photo = '" .$photo. "' WHERE event_id = '".$_POST['event_id']."'";
+            $queryPhoto = "UPDATE events SET photo = '" .$photo. "' WHERE id = '".$_POST['event_id']."'";
 
             mysqli_query($connect, $queryPhoto);
 

@@ -5,7 +5,7 @@ include("includes/database.php");
 include("includes/functions.php");
 
 if(isset($_POST['login'])){
-    $query = 'SELECT * FROM admins WHERE email = "'.$_POST['email'].'" AND password = "'.md5($_POST['password']).'" LIMIT 1';
+    $query = 'SELECT * FROM users WHERE email = "'.$_POST['email'].'" LIMIT 1';
     
     $result = mysqli_query($connect, $query);
 

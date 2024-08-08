@@ -1,5 +1,5 @@
 CREATE TABLE events (
-    event_id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+    id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
     event_name VARCHAR(255), 
     start_date DATETIME,
     end_date DATETIME,
@@ -13,12 +13,12 @@ CREATE TABLE events (
     price DECIMAL(10, 2) UNSIGNED);
 
 CREATE TABLE participants (
-    participant_id INT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+    id INT(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
     first_name VARCHAR(255) NOT NULL, 
     last_name VARCHAR(255) NOT NULL, 
     email VARCHAR(255) NOT NULL,
     event_id INT(10) UNSIGNED NOT NULL,
-    FOREIGN KEY (event_id) REFERENCES events(event_id) ON DELETE CASCADE,
+    FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE,
     UNIQUE KEY unique_email_event (email, event_id));
 
 CREATE TABLE admins(
@@ -34,7 +34,7 @@ FOR EACH ROW
 BEGIN
     UPDATE events
     SET tickets_bought = tickets_bought + 1
-    WHERE event_id = NEW.event_id;
+    WHERE id = NEW.id;
 END;
 //
 DELIMITER ;
@@ -46,7 +46,7 @@ FOR EACH ROW
 BEGIN
     UPDATE events
     SET tickets_bought = tickets_bought - 1
-    WHERE event_id = OLD.event_id;
+    WHERE id = OLD.id;
 END;
 //
 DELIMITER ;

@@ -51,7 +51,7 @@ include("includes/header.php");
         <div class="item-container-admin">
             <div class="event-content event-content-admin">
                 <div>
-                    <h2 class="title-event"><?php echo 'Event Id: '.$record["event_id"].''; ?></h2>
+                    <h2 class="title-event"><?php echo 'Event Id: '.$record["id"].''; ?></h2>
                     <h2 class="title-event"><?php echo $record["event_name"]; ?></h2>
 
                     <div class="count-participants">
@@ -71,8 +71,8 @@ include("includes/header.php");
                 </div>
 
                 <div>
-                    <a href="admin-edit.php?event_id=<?php echo $record["event_id"]; ?>" class="edit-event display-block mb-10">Update Event</a>
-                    <a href="admin-list-participants.php?event_id=<?php echo $record["event_id"]; ?>" class="list-participants display-block">List Participants</a>
+                    <a href="admin-edit.php?event_id=<?php echo $record["id"]; ?>" class="edit-event display-block mb-10">Update Event</a>
+                    <a href="admin-list-participants.php?event_id=<?php echo $record["id"]; ?>" class="list-participants display-block">List Participants</a>
                 </div>
                 
             </div>

@@ -12,7 +12,7 @@ include("includes/header.php");
 
 <?php
 
-    $query = 'SELECT * FROM events WHERE event_id = '.$_GET["event_id"].' LIMIT 1';
+    $query = 'SELECT * FROM events WHERE id = '.$_GET["event_id"].' LIMIT 1';
 
     $result = mysqli_query($connect, $query);
 
@@ -23,7 +23,7 @@ include("includes/header.php");
 <main class="hero">
     <div class="content-wrapper">
         <form action="admin-update.php" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="event_id" value="<?php echo $record["event_id"]; ?>">
+            <input type="hidden" name="event_id" value="<?php echo $record["id"]; ?>">
             <div class="margin-input">
                 <label for="label_event_name" class="label-admin">Event Name:</label>
                 <input type="text" id="label_event_name" name="event_name" class="input-admin" value="<?php echo $record["event_name"]; ?>">
@@ -66,7 +66,7 @@ include("includes/header.php");
 
             <div class="edit-delete-action">
                 <button type="submit" name="update" class="edit-event-admin">Update</button>
-                <a href="admin-delete-confirm.php?event_id=<?php echo $record["event_id"]; ?>" class="delete-event-admin">Delete</a>
+                <a href="admin-delete-confirm.php?event_id=<?php echo $record["id"]; ?>" class="delete-event-admin">Delete</a>
             </div>
         </form>
     </div>

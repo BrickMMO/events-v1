@@ -4,7 +4,7 @@
 
     if(isset($_POST['delete'])){      
 
-        $query = "DELETE FROM events WHERE event_id = '" .mysqli_real_escape_string($connect, $_POST['event_id']). "'";
+        $query = "DELETE FROM events WHERE id = '" .mysqli_real_escape_string($connect, $_POST['event_id']). "'";
 
         $deleteEvent = mysqli_query($connect, $query);
 

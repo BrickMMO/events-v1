@@ -4,7 +4,7 @@
 
     if(isset($_POST['delete-participant'])){
 
-        $query = 'DELETE FROM participants WHERE participant_id = '.$_POST["participant_id"].'';
+        $query = 'DELETE FROM participants WHERE id = '.$_POST["participant_id"].'';
 
         $result = mysqli_query($connect, $query);
 
