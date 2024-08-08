@@ -38,9 +38,9 @@ include("includes/header.php");
 
     <?php
         if(isset($_GET['search_key'])){
-            $query = 'SELECT * FROM events WHERE event_name LIKE "%'.$_GET['search_key'].'%"';
+            $query = 'SELECT * FROM events WHERE event_name LIKE "%'.$_GET['search_key'].'%" ORDER BY start_date DESC';
         } else {
-            $query = 'SELECT * FROM events';
+            $query = 'SELECT * FROM events ORDER BY start_date DESC';
         }
 
         $result = mysqli_query($connect, $query);
@@ -69,7 +69,7 @@ include("includes/header.php");
 
                 <p class="location-content"><span class="fa-solid fa-location-dot"></span> <?php echo $record["location"]; ?></p>
 
-                <a href="event-details.php?event_id=<?php echo $record["event_id"]; ?>" class="event-link">Event Details</a>
+                <a href="event-details.php?event_id=<?php echo $record["id"]; ?>" class="event-link">Event Details</a>
                 
                 <!-- <?php 
                     $price = $record["price"]; 

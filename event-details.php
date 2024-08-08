@@ -9,7 +9,7 @@ include("includes/header.php");
 
 <?php
 
-    $query = 'SELECT * FROM events WHERE event_id = '.$_GET["event_id"].' LIMIT 1';
+    $query = 'SELECT * FROM events WHERE id = '.$_GET["event_id"].' LIMIT 1';
 
     $result = mysqli_query($connect, $query);
 
@@ -69,7 +69,7 @@ include("includes/header.php");
     if(((int)$record["max_capacity"]-(int)$record["tickets_bought"]) >= 1){
         echo "<div class='reserve'> 
                     <form action='checkout.php' method='POST'>
-                        <input type='hidden' name='event_id' value=".$record["event_id"].">
+                        <input type='hidden' name='event_id' value=".$record["id"].">
                         <button type='submit' name='reservation' class='reserve-link'>Reserve a spot</button>
                     </form>
                     <p class='info-ticket content-wrapper'><span class='style-infi-ticket'>**</span>This is valid just for one ticket. If you want more tickets, you must request a new ticket with another email.</p>

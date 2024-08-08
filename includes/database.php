@@ -1,3 +1,3 @@
 <?php
 
-$connect = mysqli_connect("localhost", "root", "root", "project_brickmmo");
+$connect = mysqli_connect("localhost", "root", "root", "brickmmo_console");

@@ -26,7 +26,7 @@
         } 
     }
 
-    $query = 'SELECT * FROM events WHERE event_id = '.$_POST["event_id"].' LIMIT 1';
+    $query = 'SELECT * FROM events WHERE id = '.$_POST["event_id"].' LIMIT 1';
     $result = mysqli_query($connect, $query);
     $record = mysqli_fetch_assoc($result);
 
@@ -62,7 +62,7 @@
         <form method="post" name="form_checkout">
             
             <div class="text-input">
-                <input type='hidden' name='event_id' value=<?php echo $record["event_id"] ?>>
+                <input type='hidden' name='event_id' value=<?php echo $record["id"] ?>>
                 <div>
                     <label for="firstName">First name <span class="checkout-label">*</span>:</label>
                     <input type="text" id="firstName" name="form_fname" class="text-data space-input">
