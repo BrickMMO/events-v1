@@ -27,7 +27,7 @@ include("includes/functions.php");
             $photo = 'data:image/jpeg;base64, '.base64_encode(file_get_contents($_FILES['photo']['tmp_name']));
         
             $query = 'UPDATE events SET
-                photo = "'.addslashes($photo).', "
+                photo = "'.addslashes($photo).'"
                 WHERE id = '.$insert_id.'
                 LIMIT 1';
             mysqli_query($connect, $query);  

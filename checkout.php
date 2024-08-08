@@ -7,7 +7,7 @@
     if(isset($_POST["form_fname"])){
 
         $query = 'INSERT INTO participants (first_name, last_name, email, event_id, created_at, updated_at)
-        VALUES ("'.$_POST["form_fname"].'", "'.$_POST["form_lname"].'", "'.$_POST["form_email"].'", '.(int)$_POST["event_id"].', created_at, updated_at)';
+        VALUES ("'.$_POST["form_fname"].'", "'.$_POST["form_lname"].'", "'.$_POST["form_email"].'", '.(int)$_POST["event_id"].', NOW(), NOW())';
 
         mysqli_query($connect, $query);
 
