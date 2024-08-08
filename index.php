@@ -2,6 +2,7 @@
 
 include("includes/config.php");
 include("includes/database.php");
+include("includes/functions.php");
 include("includes/header.php");
 
 ?>
@@ -49,7 +50,7 @@ include("includes/header.php");
         <?php while($record = mysqli_fetch_assoc($result)): ?>
 
         <div class="item-container">
-            <img src="<?php echo $record["photo"]; ?>" width="294" height="152" alt="Event Photo">
+            <img src="<?php echo events_photo($record['id']); ?>" width="294" height="152" alt="Event Photo">
 
             <div class="event-content">
                 <h2 class="title-event"><?php echo $record["event_name"]; ?></h2>
