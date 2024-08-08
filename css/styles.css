@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
     --orange: #EB741D;
@@ -9,7 +9,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif; 
+    font-family: 'Poppins', sans-serif; 
     margin: 0;
 }
 
@@ -44,24 +44,15 @@ header{
     list-style: none;
     margin: 0;
     padding: 0;
-    column-gap: 15px;
+    column-gap: 15px; 
 }
-.menu li a{
-    font-size:20px;
-    font-weight:400;
-    line-height:30px;
-}
+
 .get-started{
-    padding: 1rem 2rem;
-    background-color: var(--orange);
-    border-radius: 5px;
-    transition: box-shadow 250ms;
-}
-.get-started a {
-    font-size: 19px;
-    font-weight: 400;
-    font-family: "Inter", sans serif;
     color: white;
+    padding: 8px 22px;
+    background-color: var(--orange);
+    border-radius: 3px;
+    transition: box-shadow 250ms;
 }
 
 .get-started:hover {
@@ -82,28 +73,12 @@ header{
 }
 
 .content-wrapper{
-    max-width:1440px; 
+    max-width:918px; 
     margin:0 auto; 
 }
 
-@media only screen and (max-width: 600px) {
-    .content-wrapper{
-        display:flex;
-        flex-direction: column;
-    }
-    h1, .hero-main-text, .hero-extra-text {
-        text-align:center;
-        margin-bottom: 2rem;
-    }
-}
-
 h1{
-    font-family: "Inter", sans serif;
-    font-size: 75px;
-    font-weight: 700;
-    line-height: 90px;
-    font-weight:700;
-    color: rgb(45, 55, 72);
+    font-size: 62px;
     margin: 0;
 }
 
@@ -111,11 +86,6 @@ h2, p{
     margin: 0;
 }
 
-.hero .content-wrapper img{
-    border-radius:2rem;
-    height: 500px;
-    margin-left:2rem;
-}
 .title-event{
     font-size: 20px;
 }
@@ -131,19 +101,14 @@ p{
 }
 
 .hero-main-text{
-    font-family: "Inter", sans serif;
-    font-size: 40px;
-    color: rgb(235, 116, 29)   ;
+    font-size: 29px;
+    color: var(--orange);
     font-weight:600;
-    line-height: 50px;
 }
 
 .hero-extra-text{
-    font-family: "Inter", sans serif;
-    font-size: 25px;
-    color: rgb(100, 110, 115)   ;
-    font-weight:400;
-    line-height: 40px;
+    font-size: 12px;
+    color: var(--gray);
 }
 
 .section-events, .section-list-participants{
