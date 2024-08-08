@@ -2,6 +2,7 @@
 
 include("includes/config.php");
 include("includes/database.php");
+include("includes/functions.php");
 include("includes/header.php");
 
 ?>
@@ -35,7 +36,7 @@ include("includes/header.php");
                 ?>
         </div>
         <div class="wrapper-image-event">
-            <img src="<?php echo $record["photo"]; ?>" class="event-name-title2 image-event" alt="events image">
+            <img src="<?php echo events_photo($record['id']); ?>" class="event-name-title2 image-event" alt="events image">
         </div>
     </div>
 </main>
